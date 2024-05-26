@@ -7,7 +7,6 @@ Follow the steps below to install the required packages.
 2. `conda activate facerec`
 3. `conda install -c conda-forge dlib`
 4. `pip install face_recognition opencv-pytho`
-5. `pip install opencv-python`
 
 ## Usage
 ### Make Known Faces Embeddings
