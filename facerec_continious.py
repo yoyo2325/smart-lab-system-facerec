@@ -32,7 +32,7 @@ while True:
     start = time.time()
 
     # Get the frame from the video capture
-    frame = get_frame_rgb(video_capture, continious=True)
+    frame = get_frame_rgb(video_capture, continious=True, resize_ratio=0.5)
 
     # Recognize the faces from the frame
     name = "Unknown"
