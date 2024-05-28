@@ -25,7 +25,7 @@ print()
 video_capture = cv2.VideoCapture(0)
 
 # Setup tolerance for face recognition. Lower is more strict.
-tolerance = 0.5
+tolerance = 0.6
 
 while True:
     # Start the timer for calculating the frames per second

@@ -2,23 +2,29 @@ import face_recognition
 import cv2
 import numpy as np
 
-def load_image(image_path: str) -> np.ndarray:
+def load_image(image_path: str, resize_ratio: float = 1) -> np.ndarray:
     """
     Load an image from a file path.
     """
 
     image = cv2.imread(image_path)
 
+    if resize_ratio != 1:
+        image = cv2.resize(image, (0, 0), fx=resize_ratio, fy=resize_ratio)
+
     assert image is not None, f"Failed to load image from path: {image_path}"
 
     return image
 
-def get_frame_rgb(video_capture: cv2.VideoCapture, continious: bool = False) -> np.ndarray:
+def get_frame_rgb(video_capture: cv2.VideoCapture, continious: bool = False, resize_ratio: float = 1) -> np.ndarray:
     """
     Get a single frame from the video capture and return the frame in RGB format.
     """
 
     ret, frame = video_capture.read()
+
+    if resize_ratio != 1:
+        frame = cv2.resize(frame, (0, 0), fx=resize_ratio, fy=resize_ratio)
 
     if not continious:
         video_capture.release()
